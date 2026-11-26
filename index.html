@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ana Create</title>
+<meta name="description" content="Ana Create — copywriter, social media e líder de estratégia digital. Conteúdo, campanhas, edição e filmmaker mobile. Tudo por um clique.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat+Brush&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: descontraída, confiante, com cara de colagem feita à mão
+   IDEA: um pôster-colagem que é também a "área de trabalho" da Ana: adesivos, pastas, menus
+   PICTURE: "ANA" gigante com foto-adesivo, pastas e menu de contexto flutuando
+   COLOUR and TYPE: preto dominante, amarelo ácido, apoio magenta, creme; Anton + Caveat Brush + DM Sans
+   LAYOUT: faixas cheias alternando preto / creme / magenta, uma ideia por faixa */
+:root{color-scheme:light;--g:#151515;--g2:#000;--p:#E3F23B;--pi:#151515;--pt:#E3F23B;--q:#FF52C2;--qi:#151515;--ph:#151515;--c:#F4F1E6;--k:#151515;--w:#FFFDF8}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;background:var(--c);color:var(--k);font:17px/1.55 "DM Sans",system-ui,sans-serif;overflow-x:clip}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.13;mix-blend-mode:multiply;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+a{color:inherit}
+.band{padding:clamp(48px,7vw,110px) max(5vw,18px);position:relative}
+.wrap{max-width:1240px;margin:0 auto;position:relative}
+.big{font-family:Anton,Impact,sans-serif;font-weight:400;line-height:.9;text-transform:uppercase;margin:0;letter-spacing:.005em}
+.hand{font-family:"Caveat Brush",cursive}
+h2.big{font-size:clamp(52px,9vw,128px)}
+.lead{font-size:clamp(17px,1.6vw,20px);max-width:60ch}
+.btn{display:inline-flex;align-items:center;gap:.5em;min-height:48px;padding:0 24px;border-radius:999px;border:3px solid var(--k);background:var(--p);color:var(--pi);font:700 16px "DM Sans",sans-serif;text-decoration:none;cursor:pointer;box-shadow:4px 4px 0 var(--k);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--k)}
+.btn:focus-visible,.tab:focus-visible{outline:3px dashed var(--pt);outline-offset:4px}
+/* nav */
+nav{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;justify-content:space-between;padding:18px max(5vw,18px);background:var(--g);color:var(--c)}
+nav .logo{font:28px "Caveat Brush",cursive;text-decoration:none}
+nav .logo b{color:var(--pt);font-weight:400}
+nav ul{display:flex;flex-wrap:wrap;gap:6px 22px;list-style:none;margin:0;padding:0}
+nav ul a{text-decoration:none;font-weight:500}nav ul a:hover{color:var(--pt)}
+/* hero */
+.hero{background:var(--g);color:var(--c);padding-top:clamp(20px,3vw,40px);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:24px;align-items:center}
+.name{font-size:clamp(150px,27vw,380px);color:var(--c);position:relative}
+.name .create{position:absolute;left:38%;bottom:-.12em;font:clamp(64px,10vw,150px)/1 "Caveat Brush",cursive;color:var(--pi);background:var(--p);padding:.02em .28em .1em;border-radius:14px;transform:rotate(-7deg);text-transform:none;box-shadow:6px 6px 0 var(--g2);white-space:nowrap}
+.slogan{font-size:clamp(40px,4.6vw,64px);line-height:1;color:var(--pt);margin:clamp(44px,6vw,76px) 0 10px}
+.tag{font-size:clamp(18px,1.8vw,22px);margin:0 0 20px;max-width:34ch;line-height:1.3;font-weight:500}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{border:2px solid var(--c);border-radius:999px;padding:6px 14px;font-size:15px;font-weight:500}
+.stage{position:relative;min-height:clamp(420px,46vw,620px);align-self:stretch}
+.hero-ph{position:absolute;bottom:calc(-1 * clamp(48px,7vw,110px));left:50%;transform:translateX(-50%) rotate(-1.5deg);transform-origin:bottom center;height:112%;width:auto;max-width:none;z-index:1}
+.stage .label,.stage .menu,.stage .eu,.spark,.ostar{z-index:3}
+.spark{position:absolute;color:var(--p);pointer-events:none}
+.s1{width:54px;top:4%;left:6%}.s2{width:28px;top:0;left:34%}.s3{width:40px;bottom:30%;right:0;color:var(--q)}
+.ostar{position:absolute;width:92px;color:#fff;right:2%;top:36%;transform:rotate(14deg)}
+.eu{position:absolute;left:-4%;top:26%;margin:0;font-size:clamp(26px,2.6vw,36px);color:var(--p);transform:rotate(-8deg);line-height:1}
+.eu svg{display:block;width:64px;height:64px;color:var(--p);margin:4px 0 0 60%;transform:rotate(100deg) scaleX(-1)}
+
+.sticker{position:absolute;inset:6% 8% 4% 10%;background:var(--c);border:12px solid var(--w);border-radius:46% 46% 38% 42%/40% 44% 46% 50%;transform:rotate(4deg);box-shadow:10px 12px 0 var(--g2);display:grid;place-items:center;text-align:center;color:var(--g);overflow:hidden}
+.sticker img{width:100%;height:100%;object-fit:cover}
+.sticker span{font:26px/1.1 "Caveat Brush",cursive;padding:20px;max-width:12ch}
+.burst{position:absolute;width:120%;aspect-ratio:1;left:-10%;z-index:0;top:50%;transform:translateY(-50%) rotate(8deg);color:var(--p);animation:spin 60s linear infinite}
+@keyframes spin{to{transform:translateY(-50%) rotate(368deg)}}
+.folder{position:absolute;width:clamp(70px,9vw,120px)}
+.f1{top:0;left:0;transform:rotate(-8deg)}.f2{bottom:2%;right:0;transform:rotate(10deg);width:clamp(56px,7vw,90px)}
+.label{position:absolute;top:2%;right:4%;background:#fff;color:var(--k);padding:4px 14px;font-size:clamp(16px,1.8vw,22px);border:2px dashed var(--q);font-weight:500}
+.label::before,.label::after{content:"";position:absolute;width:10px;height:10px;border-radius:50%;background:var(--p);top:-6px;left:-6px}.label::after{left:auto;right:-6px;top:auto;bottom:-6px}
+.menu{position:absolute;left:-2%;bottom:10%;background:#fff;color:var(--k);font-size:15px;box-shadow:3px 3px 0 var(--k);min-width:130px;border:1px solid #ccc}
+.menu div{padding:4px 14px}.menu .on{background:var(--p);color:var(--pi)}
+.cursor{position:absolute;right:-18px;bottom:-14px;width:26px}
+.doodle{position:absolute;pointer-events:none}
+/* marquee */
+.marq{background:var(--p);color:var(--pi);border-block:3px solid var(--k);overflow:hidden;padding:12px 0}
+.marq .row{display:flex;width:max-content;animation:slide 30s linear infinite}
+.marq span{font:clamp(28px,4vw,44px)/1 Anton,sans-serif;text-transform:uppercase;padding:0 .5em;white-space:nowrap}
+@keyframes slide{to{transform:translateX(-50%)}}
+/* sobre */
+.sobre .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(30px,5vw,80px);align-items:start}
+.sobre h2{color:var(--g)}
+.sobre p{margin:0 0 1em}
+.side{display:flex;flex-direction:column;align-items:center}
+.me{margin:0 0 -50px;width:min(300px,70%);transform:rotate(3deg);position:relative;z-index:2}
+.me img{width:100%;height:auto;display:block;filter:drop-shadow(6px 6px 0 var(--q))}
+.me figcaption{position:absolute;right:-18%;bottom:22%;border:2px solid var(--q);border-radius:50%;padding:10px 18px;font-weight:700;font-size:14px;line-height:1.15;text-align:center;background:var(--c);transform:rotate(-8deg)}
+.mstar{position:absolute;width:46px;left:-22px;top:-18px;color:var(--q)}
+.win{align-self:stretch;background:var(--w);border:3px solid var(--k);border-radius:16px;box-shadow:8px 8px 0 var(--g);overflow:hidden}
+.bar{display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:3px solid var(--k);background:var(--p);color:var(--pi);font-weight:700;font-size:15px}
+.bar i{width:13px;height:13px;border-radius:50%;border:2px solid var(--k);background:var(--c)}
+.bar em{margin-left:auto;font-style:normal;font-weight:500}
+.desk{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 12px;padding:24px 16px}
+.skill{text-align:center;padding:8px 4px;border-radius:10px;cursor:default}
+.skill:hover,.skill:focus{background:color-mix(in srgb,var(--g) 10%,#fff);outline:none}
+.skill svg{width:66px;display:block;margin:0 auto 6px}
+.skill b{display:block;font-size:15px;line-height:1.2}
+.skill small{display:block;font-size:13px;color:#4a4a4a;margin-top:4px}
+/* trabalhos */
+.trab{background:var(--g);color:var(--c)}
+.trab h2 .hand{color:var(--pt);text-transform:none;font-size:.55em;display:inline-block;transform:rotate(-4deg)}
+.tabs{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 34px}
+.tab{min-height:44px;padding:0 18px;border-radius:999px;border:2px solid var(--c);background:transparent;color:var(--c);font:500 16px "DM Sans",sans-serif;cursor:pointer}
+.tab[aria-pressed=true]{background:var(--p);border-color:var(--p);color:var(--pi)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:34px 24px}
+.work{display:flex;flex-direction:column;gap:10px}.work p{margin:0}
+.phone{background:var(--k);border-radius:34px;padding:12px;box-shadow:6px 6px 0 var(--g2);aspect-ratio:9/17;position:relative;overflow:hidden}
+.phone img{width:100%;height:100%;object-fit:cover;border-radius:24px;display:block;transition:transform .3s}
+a.phone:hover img{transform:scale(1.03)}
+a.phone:focus-visible{outline:3px dashed var(--pt);outline-offset:4px}
+.phone iframe{width:100%;height:100%;border:0;border-radius:24px;background:#fff}
+.fb{height:100%;border-radius:24px;background:var(--c);color:var(--g);display:flex;flex-direction:column;justify-content:space-between;padding:22px 18px;text-decoration:none}
+.fb .grp{font:clamp(30px,3vw,40px)/.95 Anton,sans-serif;text-transform:uppercase}
+.fb .play{width:64px;height:64px;border-radius:50%;background:var(--p);display:grid;place-items:center;align-self:center;border:3px solid var(--k)}
+.fb .go{font-weight:700}
+.fb:hover .play{transform:scale(1.08)}
+.role{font-weight:500;font-size:15px}
+.cred{font-size:11px;opacity:.5;margin:28px 0 0}
+.role sup{opacity:.6;margin-left:2px}
+.camp{background:var(--p);color:var(--pi)}
+.kick{font-size:clamp(30px,3.4vw,46px);line-height:1;margin:14px 0 10px;transform:rotate(-2deg);display:inline-block;background:var(--k);color:var(--p);padding:4px 16px 8px;border-radius:10px}
+.camps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,3vw,44px);margin-top:44px}
+.cc{display:flex;flex-direction:column;gap:16px}
+.cc:nth-child(2){transform:translateY(40px)}
+.cc .phone{box-shadow:8px 8px 0 var(--k)}
+.cc .cl{display:inline-block;align-self:flex-start;background:var(--k);color:var(--p);border-radius:999px;padding:3px 12px;font-size:13px;font-weight:700}
+.cc h3{font:clamp(26px,2.6vw,34px)/1 Anton,sans-serif;text-transform:uppercase;margin:0}
+.cc p{margin:0;font-weight:500}
+@media(max-width:860px){.camps{grid-template-columns:minmax(0,1fr);max-width:380px;margin-inline:auto}.cc:nth-child(2){transform:none}}
+.role::before{content:"✦ ";color:var(--pt)}
+.more{margin-top:40px;text-align:center}
+/* cliques */
+.cliques{background:var(--q);color:var(--qi)}
+.cliques h2{color:var(--ph)}
+.pols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,44px);margin-top:44px;max-width:1080px}
+.pol{background:var(--w);color:var(--k);padding:12px 12px 8px;box-shadow:5px 6px 0 var(--k);transition:transform .2s}
+.pol:nth-child(1){transform:rotate(-6deg)}.pol:nth-child(2){transform:rotate(4deg) translateY(20px)}.pol:nth-child(3){transform:rotate(-2deg)}.pol:nth-child(4){transform:rotate(7deg) translateY(14px)}
+.pol:hover{transform:rotate(0) scale(1.04)}
+.ph{aspect-ratio:4/5;background:repeating-linear-gradient(45deg,#e9e1d3 0 10px,#f1eadd 10px 20px);display:grid;place-items:center;color:#8a7f6c;font-size:14px;text-align:center;padding:10px;overflow:hidden}
+.ph img{width:100%;height:100%;object-fit:cover}
+.pol p{font:24px/1.1 "Caveat Brush",cursive;margin:8px 0 2px;text-align:center}
+.sub{font:clamp(34px,4.5vw,56px)/1 Anton,sans-serif;text-transform:uppercase;margin:90px 0 0;color:var(--ph)}
+.shots{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:24px 0 10px}
+.shots img{flex:0 0 clamp(210px,24vw,290px);height:auto;aspect-ratio:3/4;object-fit:cover;scroll-snap-align:start;border:3px solid var(--k);box-shadow:5px 5px 0 var(--k);display:block}
+.shots{padding-bottom:16px}
+.snav{display:flex;gap:10px;margin-top:10px}
+.snav button{width:48px;height:48px;border-radius:50%;border:3px solid var(--k);background:var(--w);font-size:26px;line-height:1;cursor:pointer}
+.note{font-size:14px;opacity:.8;margin-top:10px}
+/* marcas */
+.marcas .wrap{text-align:center}
+.marcas h2{color:var(--g)}
+.top{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 14px;margin:36px auto 40px;max-width:1000px}
+.top span{font:clamp(22px,3vw,34px)/1.2 Anton,sans-serif;text-transform:uppercase;padding:4px 16px;border:3px solid var(--k);border-radius:999px;background:var(--w)}
+.top span:nth-child(3n){background:var(--p);color:var(--pi)}.top span:nth-child(5n){background:var(--q);color:var(--qi)}.top span:nth-child(4n){background:var(--g);color:var(--c);border-color:var(--g)}
+#todas{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;text-align:left;margin-top:44px}
+#todas[hidden]{display:none}
+.era{background:var(--w);border:3px solid var(--k);border-radius:16px;padding:20px 22px;box-shadow:5px 5px 0 var(--g)}
+.era h3{font:30px/1 "Caveat Brush",cursive;margin:0 0 12px;color:var(--g)}
+.era ul{list-style:none;margin:0;padding:0}.era li{padding:5px 0;border-bottom:1px dashed #c9bfae}.era li:last-child{border:0}
+.era li small{display:block;color:#5a5a5a;font-size:13px}
+/* fora */
+.fora{background:var(--c);border-top:3px solid var(--k)}
+.fora .wrap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(30px,5vw,80px);align-items:center}
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:3px solid var(--k)}
+.tiles div{aspect-ratio:1;display:grid;place-items:center}
+.tiles svg{width:78%}
+.fora h2{color:var(--g)}
+/* contato */
+.contato{background:var(--g);color:var(--c);overflow:hidden;text-align:center}
+.contato::before{content:"";position:absolute;left:50%;top:100%;width:260vmax;height:260vmax;transform:translate(-50%,-50%);background:repeating-conic-gradient(from 0deg,color-mix(in srgb,var(--pt) 22%,transparent) 0 6deg,transparent 6deg 16deg);pointer-events:none}
+.contato h2{font-size:clamp(72px,15vw,220px);position:relative}
+.burst2{position:absolute;width:clamp(120px,16vw,220px);aspect-ratio:1;right:2%;top:-40px;color:var(--q);transform:rotate(-12deg)}
+.contato .lead{margin:20px auto 34px;position:relative}
+.links{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;position:relative}
+.links small{display:block;width:100%;margin-top:14px;opacity:.8}
+.player{border:0;padding:16px;background:transparent;max-width:100vw;max-height:100vh;overflow:auto}
+.player::backdrop{background:rgba(12,12,12,.88)}
+.pbox{display:flex;flex-direction:column;align-items:center;gap:12px}
+.pframe{width:min(400px,90vw);height:min(74vh,720px);background:var(--w);border-radius:20px;overflow:hidden;border:4px solid var(--p);position:relative}
+.pframe iframe{width:100%;height:100%;border:0;display:block}
+.pframe img{width:100%;height:100%;object-fit:cover;display:block}
+.pframe .pnote{position:absolute;left:12px;right:12px;bottom:12px;background:var(--k);color:var(--c);font-size:13px;padding:8px 12px;border-radius:10px;text-align:center}
+.pcap{margin:0;color:var(--c);font-weight:500;text-align:center}
+.pnav{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;align-items:center}
+.pnav button{min-height:44px;border-radius:999px;border:2px solid var(--c);background:transparent;color:var(--c);padding:0 16px;font:600 15px "DM Sans",sans-serif;cursor:pointer}
+.pnav button:disabled{opacity:.35;cursor:default}
+.x{position:fixed;top:14px;right:18px;width:48px;height:48px;border-radius:50%;border:0;background:var(--p);color:var(--pi);font-size:30px;line-height:1;cursor:pointer;z-index:2}
+footer{background:var(--k);color:var(--c);padding:22px max(5vw,18px);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:14px}
+@media(max-width:860px){
+ .hero .wrap,.sobre .wrap,.fora .wrap{grid-template-columns:minmax(0,1fr)}
+ .stage{min-height:420px;max-width:480px;width:100%;margin:0 auto}
+ .pols{grid-template-columns:minmax(0,1fr);max-width:340px;margin-inline:auto}
+}
+@media(max-width:600px){
+ .eu{left:2%;top:18%}
+ .name .create{left:30%}
+ .desk{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .grid{grid-template-columns:minmax(0,1fr);max-width:340px;margin:0 auto}
+ .menu{font-size:13px;min-width:100px}
+}
+@media(prefers-reduced-motion:reduce){.marq .row,.burst{animation:none}*{transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <defs>
+  <symbol id="folder" viewBox="0 0 120 92"><path d="M6 14q0-8 8-8h30l10 10h52q8 0 8 8v56q0 8-8 8H14q-8 0-8-8z" fill="currentColor"/><path d="M6 30h108v50q0 8-8 8H14q-8 0-8-8z" fill="currentColor" opacity=".8"/></symbol>
+  <symbol id="star" viewBox="0 0 100 100"><path d="M50 10 59 40 90 42 65 60 75 90 50 71 25 90 35 60 10 42 41 40Z" fill="none" stroke="currentColor" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+  <symbol id="squig" viewBox="0 0 140 100"><path d="M10 50C30 10 50 90 70 50S110 10 130 50" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round"/></symbol>
+  <symbol id="loop" viewBox="0 0 120 100"><path d="M18 62C14 22 80 18 72 56 64 88 22 74 40 46 58 18 112 30 102 72" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round"/></symbol>
+  <symbol id="burst" viewBox="0 0 100 100"><path d="M50.0 4.1 L53.7 31.5 L68.3 5.7 L60.2 34.7 L83.4 16.6 L66.8 38.8 L91.0 33.0 L70.6 45.9 L94.2 50.0 L70.2 54.0 L91.0 67.0 L65.4 60.3 L82.9 82.9 L62.8 69.1 L67.1 91.3 L53.8 69.0 L50.0 97.8 L45.4 73.2 L31.8 93.8 L38.7 66.9 L14.7 85.3 L34.8 60.2 L4.6 68.8 L30.6 53.9 L5.1 50.0 L31.7 46.4 L7.6 32.5 L31.0 37.3 L18.1 18.1 L38.1 32.1 L31.7 5.8 L46.1 30.2Z" fill="currentColor"/></symbol>
+  <symbol id="spark" viewBox="0 0 100 100"><path d="M50 0C54 36 64 46 100 50 64 54 54 64 50 100 46 64 36 54 0 50 36 46 46 36 50 0Z" fill="currentColor"/></symbol>
+  <symbol id="arrow" viewBox="0 0 100 100"><path d="M18 82C30 52 50 36 80 22M80 22 54 20M80 22 74 48" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+ </defs>
+</svg>
+
+<nav>
+ <a class="logo" href="#topo">ana <b>create</b></a>
+ <ul>
+  <li><a href="#sobre">sobre</a></li>
+  <li><a href="#trabalhos">conteúdo</a></li>
+  <li><a href="#campanhas">campanhas</a></li>
+  <li><a href="#cliques">tudo por um clique</a></li>
+  <li><a href="#marcas">marcas</a></li>
+  <li><a href="#contato">contato</a></li>
+ </ul>
+</nav>
+
+<header class="band hero" id="topo">
+ <div class="wrap">
+  <div>
+   <h1 class="big name">Ana<span class="create">create</span></h1>
+   <p class="slogan hand">Tudo por um clique.</p>
+   <p class="tag">Design por formação, criativa desde o primeiro lápis de cor.</p>
+   <div class="chips">
+    <span class="chip">copywriter</span>
+    <span class="chip">social media</span>
+    <span class="chip">líder de estratégia digital</span>
+    <span class="chip">filmmaker mobile</span>
+   </div>
+  </div>
+  <div class="stage">
+   <img class="hero-ph" src="img/hero_bw.webp" alt="Ana Lima" width="800" height="958">
+   <svg class="spark s1" aria-hidden="true"><use href="#spark"/></svg>
+   <svg class="spark s2" aria-hidden="true"><use href="#spark"/></svg>
+   <svg class="spark s3" aria-hidden="true"><use href="#spark"/></svg>
+   <svg class="ostar" aria-hidden="true"><use href="#star"/></svg>
+   <div class="label" aria-hidden="true">Ana Create</div>
+   <p class="eu hand" aria-hidden="true">essa sou eu!<svg><use href="#arrow"/></svg></p>
+   <div class="menu" aria-hidden="true"><div>Copiar</div><div>Colar</div><div class="on">Criar</div><div>Postar</div>
+    <svg class="cursor" viewBox="0 0 24 24"><path d="M3 2l17 10-7 2-3 7z" fill="#fff" stroke="#161616" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+  </div>
+ </div>
+</header>
+
+<div class="marq" aria-hidden="true"><div class="row" id="marq"></div></div>
+
+<section class="band sobre" id="sobre">
+ <div class="wrap">
+  <div>
+   <h2 class="big">Oi, eu sou<br>a Ana.</h2>
+   <p class="lead" style="margin-top:28px">Sou formada em design, mas criativa desde o primeiro lápis de cor. Estou há 4 anos no marketing, a maior parte como social media e copywriter. Hoje sou líder de estratégia digital.</p>
+   <p>Crio, escrevo, edito e filmo. Gosto de desenvolver campanha, de escrever e da conversa com o cliente. Lido bem com feedback, porque o que eu busco é o melhor para a marca e para quem está do outro lado.</p>
+   <p>E não me acomodo: se existe um jeito mais criativo de fazer, eu vou atrás.</p>
+  </div>
+  <div class="side">
+  <figure class="me"><img src="img/sobre_bw.webp" alt="Ana sorrindo" width="738" height="851" loading="lazy"><figcaption>um pouco<br>sobre mim</figcaption><svg class="mstar" aria-hidden="true"><use href="#spark"/></svg></figure>
+  <div class="win">
+   <div class="bar"><i></i><i></i><i></i><em>~/ana/o-que-eu-faço</em></div>
+   <div class="desk" id="desk"></div>
+  </div>
+  </div>
+ </div>
+</section>
+
+<section class="band trab" id="trabalhos">
+ <div class="wrap">
+  <h2 class="big">Conteúdo <span class="hand">dá o play</span></h2>
+  <div class="tabs" role="group" aria-label="Filtrar trabalhos" id="tabs"></div>
+  <div class="grid" id="grid"></div>
+  <div class="more"><button class="btn" id="more" type="button">mostrar mais</button></div>
+  <p class="cred" id="acev">* desenvolvido através da agência ACEV</p>
+ </div>
+</section>
+
+<section class="band camp" id="campanhas">
+ <div class="wrap">
+  <h2 class="big">Campanhas</h2>
+  <p class="kick hand">o combustível do branding</p>
+  <p class="lead">Toda marca, e toda pessoa, já tem uma mensagem. A campanha é o que dá volume a ela: um conceito criativo que pega o que já existe, enfatiza e faz ser lembrado.</p>
+  <div class="camps" id="camps"></div>
+  <p class="cred" style="margin-top:64px">* desenvolvido através da agência ACEV</p>
+ </div>
+</section>
+
+<section class="band cliques" id="cliques">
+ <div class="wrap">
+  <h2 class="big">Tudo por<br>um clique</h2>
+  <p class="lead" style="margin-top:24px">Filmmaker mobile na prática: se a foto pede que eu suba no muro, eu subo. Se pede que eu fique toda torta, eu fico.</p>
+  <div class="pols">
+   <figure class="pol" style="margin:0"><div class="ph"><img src="img/clique_chao.jpg" alt="Ana agachada no chão de pedra, fotografando com o celular" loading="lazy" width="600" height="750"></div><p>no chão, se precisar</p></figure>
+   <figure class="pol" style="margin:0"><div class="ph"><img src="img/clique_banco.jpg" alt="Ana em pé em cima de um banco, fotografando" loading="lazy" width="600" height="750"></div><p>em cima do banco</p></figure>
+   <figure class="pol" style="margin:0"><div class="ph"><img src="img/clique_muro.jpg" alt="Ana em cima de um muro, fotografando" loading="lazy" width="600" height="750"></div><p>em cima do muro</p></figure>
+  </div>
+  <h3 class="sub">O que sai da câmera</h3>
+  <div class="shots" tabindex="0" aria-label="Fotos tiradas pela Ana" id="shots"></div>
+  <div class="snav"><button type="button" id="sprev" aria-label="Fotos anteriores">‹</button><button type="button" id="snext" aria-label="Próximas fotos">›</button></div>
+ </div>
+</section>
+
+<section class="band marcas" id="marcas">
+ <div class="wrap">
+  <h2 class="big">Marcas que<br>passaram por aqui</h2>
+  <div class="top" id="top"></div>
+  <button class="btn" id="toggle" type="button" aria-expanded="false" aria-controls="todas">ver todas as marcas (+<span id="n"></span>)</button>
+  <div id="todas" hidden></div>
+ </div>
+</section>
+
+<section class="band fora">
+ <div class="wrap">
+  <div class="tiles" aria-hidden="true">
+   <div style="background:var(--c);color:var(--p)"><svg><use href="#arrow"/></svg></div>
+   <div style="background:var(--g);color:var(--c)"><svg><use href="#star"/></svg></div>
+   <div style="background:var(--q);color:var(--g)"><svg><use href="#burst"/></svg></div>
+   <div style="background:var(--k);color:var(--pt)"><svg><use href="#squig"/></svg></div>
+   <div style="background:var(--c);color:var(--g)"><svg><use href="#loop"/></svg></div>
+   <div style="background:var(--g);color:var(--pt)"><svg><use href="#star"/></svg></div>
+  </div>
+  <div>
+   <h2 class="big" style="font-size:clamp(48px,7vw,96px)">Fora do<br>expediente</h2>
+   <p class="lead" style="margin-top:24px">Crochê, artesanato e tudo que é feito à mão. A criatividade não desliga quando o expediente acaba, ela só muda de ferramenta.</p>
+  </div>
+ </div>
+</section>
+
+<section class="band contato" id="contato">
+ <div class="wrap">
+  <svg class="burst2" aria-hidden="true"><use href="#burst"/></svg>
+  <h2 class="big">Bora criar?</h2>
+  <p class="lead">Campanha, conteúdo, estratégia ou aquela ideia que ainda não tem nome. Me chama.</p>
+  <div class="links">
+   <a class="btn" href="https://wa.me/5585992201634?text=Oi%20Ana!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar." target="_blank" rel="noopener">WhatsApp</a>
+   <a class="btn" href="https://www.instagram.com/btriz.ana/" target="_blank" rel="noopener" style="background:var(--c)">Instagram</a>
+   <a class="btn" href="mailto:anablimamkt@gmail.com">E-mail</a>
+   <small>(85) 99220-1634 · @btriz.ana · anablimamkt@gmail.com</small>
+  </div>
+ </div>
+</section>
+
+<dialog class="player" id="player" aria-label="Vídeo">
+ <button class="x" type="button" id="px" aria-label="Fechar">×</button>
+ <div class="pbox">
+  <div class="pframe" id="pframe"></div>
+  <p class="pcap" id="pcap"></p>
+  <div class="pnav">
+   <button type="button" id="pprev">‹ anterior</button>
+   <a class="btn" id="pext" href="#" target="_blank" rel="noopener">abrir no Instagram ↗</a>
+   <button type="button" id="pnext">próximo ›</button>
+  </div>
+ </div>
+</dialog>
+<footer><span>Ana Lima · <b>Ana Create</b></span><span>Fortaleza, CE · 2026</span></footer>
+
+<script>
+{
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+const SKILLS=[
+ ['Estratégia','planejamento e posicionamento','var(--g)'],
+ ['Campanhas','conceito criativo e lançamento','var(--p)'],
+ ['Copywriting','legendas, roteiros e textos','var(--g)'],
+ ['Social media','pauta, calendário e gestão','var(--p)'],
+ ['Edição','reels e vídeos curtos','var(--g)'],
+ ['Filmmaker mobile','captação no celular','var(--p)']];
+document.getElementById('desk').innerHTML=SKILLS.map(([t,d,c])=>
+ `<div class="skill" tabindex="0"><svg viewBox="0 0 120 92" style="color:${c}"><use href="#folder"/></svg><b>${esc(t)}</b><small>${esc(d)}</small></div>`).join('');
+
+const TAGS=['tudo por um clique','social media','copywriting','estratégia digital','campanhas','edição','filmmaker mobile'];
+const m=TAGS.map(t=>`<span>${esc(t)}</span><span>✱</span>`).join('');
+document.getElementById('marq').innerHTML=m+m;
+
+const GR={saude:'Saúde',moda:'Moda',outros:'Outros segmentos',campanhas:'Campanhas'};
+const ACEV=new Set(['DdUWzKCzywU','DcyYhoWBISy','De_nTEQoDXW','DeRppH5xN_K','DdrNSn1xOVQ','DfXoEvfBTRa','DfHrRRxxcEU','DenLUAVjS7v','DbobLkQxBQD']);
+const pce='planejamento, captação e edição',pe='planejamento e edição',ce='captação e edição';
+const W=[
+ ['campanhas','reel','DWPXmrUETDv','conceito criativo'],['campanhas','reel','DbobLkQxBQD','lançamento da empresa no digital'],['campanhas','reel','DWj5blIii_s','conceito criativo de campanha'],
+ ['saude','reel','DdUWzKCzywU',pe],['saude','reel','DcyYhoWBISy',pe],['saude','reel','De_nTEQoDXW','edição'],['saude','reel','DeRppH5xN_K',ce],
+ ['saude','reel','Da0mPBjqQWc',pce],['saude','reel','DaduqiGFNxI',pce],['saude','reel','DW9k-a3DTCA',pce],
+ ['saude','reel','DU_TZXXkmZF',pce],['saude','reel','DXhtizskyZY',pce],['saude','reel','DeMIEjzMHzP',pce],
+ ['moda','reel','DGTwzSPROvU','conteúdo de moda'],['moda','p','DHWuDXMRZO-','conteúdo de moda'],['moda','p','DCZd8XJxe-k','conteúdo de moda'],
+ ['moda','p','DGgQB6vRXMF','conteúdo de moda'],['moda','p','DEsIb7zRSRN','conteúdo de moda'],
+ ['moda','p','DIPRw7hRyV0',pe],['moda','p','DIMyvDfRx67',pe],['moda','p','DDPAXtXRgbV',pe],['moda','p','DFSU22oRWHk',pe],['moda','p','DFJGXVvRNV-',pe],
+ ['outros','reel','DdrNSn1xOVQ',pce],['outros','reel','DfXoEvfBTRa','edição'],['outros','reel','DfHrRRxxcEU',ce],['outros','reel','DenLUAVjS7v',ce]];
+
+const EMBED=window.top===window.self;
+const LISTS={c:[],k:[]};
+const SUB=[['tudo','Tudo'],['saude','Saúde'],['moda','Moda'],['outros','Outros segmentos']];
+let sub='tudo',lim=8;
+const tabs=document.getElementById('tabs'),grid=document.getElementById('grid'),more=document.getElementById('more'),foot=document.getElementById('acev');
+const btns=(list,cur)=>list.map(([k,v])=>`<button class="tab" type="button" data-k="${k}" aria-pressed="${k===cur}">${esc(v)}</button>`).join('');
+const phone=([g,t,c,r],l,i)=>{const url=`https://www.instagram.com/${t}/${c}/`;return `<a class="phone" href="${url}" target="_blank" rel="noopener" data-l="${l}" data-i="${i}" aria-label="${esc(GR[g]+': '+r+' (assistir)')}"><img src="covers/${c}.jpg" alt="" loading="lazy"></a>`};
+const card=(w,i)=>`<article class="work">${phone(w,'c',i)}<p class="role">${esc(w[3])}${ACEV.has(w[2])?'<sup>*</sup>':''}</p></article>`;
+const render=()=>{
+ tabs.innerHTML=btns(SUB,sub);
+ const list=W.filter(([g])=>g!=='campanhas'&&(sub==='tudo'||g===sub));
+ const shown=list.slice(0,lim);
+ LISTS.c=shown;
+ grid.innerHTML=shown.map(card).join('');
+ more.parentElement.hidden=list.length<=lim;
+ foot.hidden=!shown.some(w=>ACEV.has(w[2]));
+};
+tabs.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;sub=b.dataset.k;lim=8;render()});
+more.addEventListener('click',()=>{lim+=8;render()});
+const CAMP={DWPXmrUETDv:['Pediatra Sem Jaleco','De volta à infância'],DbobLkQxBQD:['',"O militar não promete, ele cumpre"],DWj5blIii_s:['Lapidart','Retrospectiva entre mulheres']};
+LISTS.k=W.filter(w=>w[0]==='campanhas');
+document.getElementById('camps').innerHTML=LISTS.k.map((w,i)=>{const [cl,ti]=CAMP[w[2]]||['',''];
+ return `<article class="cc">${phone(w,'k',i)}${cl?`<span class="cl">${esc(cl)}</span>`:''}<h3>${esc(ti)}</h3><p>${esc(w[3])}${ACEV.has(w[2])?'<sup>*</sup>':''}</p></article>`}).join('');
+const dlg=document.getElementById('player'),pf=document.getElementById('pframe'),pcap=document.getElementById('pcap'),pext=document.getElementById('pext'),pprev=document.getElementById('pprev'),pnext=document.getElementById('pnext');
+let cur={l:'c',i:0};
+const show=()=>{
+ const L=LISTS[cur.l],w=L[cur.i];if(!w)return;
+ const [g,t,c,r]=w,url=`https://www.instagram.com/${t}/${c}/`;
+ pf.innerHTML=EMBED?`<iframe src="${url}embed/" title="Vídeo no Instagram" allow="autoplay; encrypted-media; fullscreen" scrolling="no"></iframe>`
+  :`<img src="covers/${c}.jpg" alt=""><span class="pnote">Na prévia o vídeo não toca. No site publicado ele roda aqui.</span>`;
+ pcap.textContent=(GR[g]||'')+' · '+r;
+ pext.href=url;pprev.disabled=cur.i<=0;pnext.disabled=cur.i>=L.length-1;
+};
+const openP=(l,i)=>{cur={l,i};show();try{dlg.showModal()}catch(e){dlg.setAttribute('open','')}};
+const closeP=()=>{pf.innerHTML='';dlg.open&&dlg.close()};
+document.addEventListener('click',e=>{
+ const a=e.target.closest('a.phone');if(!a)return;
+ e.preventDefault();openP(a.dataset.l,+a.dataset.i);
+});
+document.getElementById('px').addEventListener('click',closeP);
+pprev.addEventListener('click',()=>{if(cur.i>0){cur.i--;show()}});
+pnext.addEventListener('click',()=>{if(cur.i<LISTS[cur.l].length-1){cur.i++;show()}});
+dlg.addEventListener('click',e=>{if(e.target===dlg)closeP()});
+dlg.addEventListener('close',()=>{pf.innerHTML=''});
+document.addEventListener('keydown',e=>{if(!dlg.open)return;if(e.key==='ArrowLeft')pprev.click();if(e.key==='ArrowRight')pnext.click()});
+render();
+
+document.getElementById('shots').innerHTML=[15,14,16,1,2,4,5,6,7,8,9,10,11,12,13].map(n=>`<img src="img/shot_${String(n).padStart(2,'0')}.jpg" alt="Foto tirada pela Ana" loading="lazy" width="448" height="598">`).join('');
+const sh=document.getElementById('shots');
+document.getElementById('sprev').addEventListener('click',()=>sh.scrollBy({left:-sh.clientWidth*0.8,behavior:'smooth'}));
+document.getElementById('snext').addEventListener('click',()=>sh.scrollBy({left:sh.clientWidth*0.8,behavior:'smooth'}));
+
+const ERAS=[
+ ['O começo',[['Volkswagen'],['Mandala Spa']]],
+ ['Na agência',[['Amarelô'],['Dilady'],['Cultura Inglesa'],['Azilados'],['Love Secret'],['Linhas e Cores']]],
+ ['Moda',[['Angelique'],['My Coat','vestuário para médicos']]],
+ ['Na TriWeb',[['Vale da Serra','hospedagem em Maranguape'],['Pediatra Sem Jaleco','Dra. Priscila Brasil'],['Dr. Eric','oftalmologista'],['Dr. Rodrigo','ortopedista'],['Lapidart','clínica de estética'],['CPDEM','endocrinologia'],['Autoescola Santos'],['TriWeb','perfil da agência'],['Dr. André','ortopedista']]],
+ ['Hoje',[['Dr. Érico Diógenes','urologista, cirurgia robótica'],['Dr. Neto','cirurgião torácico, cirurgia robótica'],['IACR','8 especialistas em cirurgia robótica'],['Faculdade INBEC'],['NECI','instituto de endometriose'],['Dr. Sidney','ginecologista'],['Fortal Consórcios','desde o início']]]];
+const ALL=ERAS.flatMap(e=>e[1]);
+document.getElementById('n').textContent=ALL.length;
+const TOP=['Volkswagen','Cultura Inglesa','Love Secret','Mandala Spa','Amarelô','IACR','Fortal Consórcios','Faculdade INBEC','Vale da Serra','Dilady'];
+document.getElementById('top').innerHTML=TOP.map(t=>`<span>${esc(t)}</span>`).join('');
+const todas=document.getElementById('todas'),tg=document.getElementById('toggle');
+todas.innerHTML=ERAS.map(([h,l])=>`<div class="era"><h3>${esc(h)}</h3><ul>${l.map(([n,d])=>`<li>${esc(n)}${d?`<small>${esc(d)}</small>`:''}</li>`).join('')}</ul></div>`).join('');
+tg.addEventListener('click',()=>{
+ const open=todas.hidden;todas.hidden=!open;tg.setAttribute('aria-expanded',open);
+ tg.firstChild.textContent=open?'fechar lista ':'ver todas as marcas (+';
+ tg.lastChild.textContent=open?'':')';
+ document.getElementById('n').style.display=open?'none':'';
+});
+}
+</script>
+</body>
+</html>
