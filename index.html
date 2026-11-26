@@ -78,7 +78,7 @@ nav ul a{text-decoration:none;font-weight:500}nav ul a:hover{color:var(--pt)}
 .sobre h2{color:var(--g)}
 .sobre p{margin:0 0 1em}
 .side{display:flex;flex-direction:column;align-items:center}
-.me{margin:0 0 -50px;width:min(300px,70%);transform:rotate(3deg);position:relative;z-index:2}
+.me{margin:0 0 -34px;width:min(280px,60%);align-self:flex-start;margin-left:6%!important;transform:rotate(3deg);position:relative;z-index:2}
 .me .stack{position:relative;aspect-ratio:740/875;filter:drop-shadow(6px 6px 0 var(--q))}
 .me .stack img{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:0;transition:opacity .15s}
 .me .stack img.on{opacity:1}
@@ -99,11 +99,11 @@ nav ul a{text-decoration:none;font-weight:500}nav ul a:hover{color:var(--pt)}
 .bar{display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:3px solid var(--k);background:var(--p);color:var(--pi);font-weight:700;font-size:15px}
 .bar i{width:13px;height:13px;border-radius:50%;border:2px solid var(--k);background:var(--c)}
 .bar em{margin-left:auto;font-style:normal;font-weight:500}
-.desk{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 12px;padding:24px 16px}
+.desk{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px 12px;padding:24px 16px}
 .skill{text-align:center;padding:8px 4px;border-radius:10px;cursor:default}
 .skill:hover,.skill:focus{background:color-mix(in srgb,var(--g) 10%,#fff);outline:none}
 .skill svg{width:66px;display:block;margin:0 auto 6px}
-.skill b{display:block;font-size:15px;line-height:1.2}
+.skill b{display:block;font-size:14px;line-height:1.2}
 .skill small{display:block;font-size:13px;color:#4a4a4a;margin-top:4px}
 /* trabalhos */
 .trab{background:var(--g);color:var(--c)}
@@ -229,6 +229,8 @@ footer{background:var(--k);color:var(--c);padding:22px max(5vw,18px);display:fle
  .name .create{left:30%}
  .desk{grid-template-columns:repeat(2,minmax(0,1fr))}
  .swipe{display:block}
+ .me{margin:0 auto 22px!important;width:min(260px,72%);align-self:center}
+ .desk{gap:14px 8px;padding:18px 10px}
  .acev{right:-11px;font-size:9px}.cc .acev{right:-12px}
  .grid,.camps,.pols{display:flex!important;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:calc(-1 * max(5vw,18px));padding:4px max(5vw,18px) 16px;scroll-padding-inline:max(5vw,18px);max-width:none!important;scrollbar-width:none}
  .grid::-webkit-scrollbar,.camps::-webkit-scrollbar,.pols::-webkit-scrollbar{display:none}
@@ -283,6 +285,7 @@ footer{background:var(--k);color:var(--c);padding:22px max(5vw,18px);display:fle
     <span class="chip">social media</span>
     <span class="chip">líder de estratégia digital</span>
     <span class="chip">filmmaker mobile</span>
+    <span class="chip">real time</span>
    </div>
   </div>
   <div class="stage">
@@ -342,7 +345,7 @@ footer{background:var(--k);color:var(--c);padding:22px max(5vw,18px);display:fle
 <section class="band cliques" id="cliques">
  <div class="wrap">
   <h2 class="big">Tudo por<br>um clique</h2>
-  <p class="lead" style="margin-top:24px">Filmmaker mobile na prática: se a foto pede que eu suba no muro, eu subo. Se pede que eu fique toda torta, eu fico.</p>
+  <p class="lead" style="margin-top:24px">Filmmaker mobile na prática. No fim, o que importa é o projeto final, e eu faço o que for preciso para chegar nele.</p>
   <p class="swipe" style="margin-top:30px">arraste para o lado →</p>
   <div class="pols">
    <figure class="pol" style="margin:0"><div class="ph"><img src="img/clique_chao.jpg" alt="Ana agachada no chão de pedra, fotografando com o celular" loading="lazy" width="600" height="750"></div><p>no chão, se precisar</p></figure>
@@ -418,12 +421,14 @@ const SKILLS=[
  ['Campanhas','conceito criativo e lançamento','var(--p)'],
  ['Copywriting','legendas, roteiros e textos','var(--g)'],
  ['Social media','pauta, calendário e gestão','var(--p)'],
- ['Edição','reels e vídeos curtos','var(--g)'],
- ['Filmmaker mobile','captação no celular','var(--p)']];
+ ['Edição de vídeos','reels e vídeos curtos','var(--g)'],
+ ['Filmmaker mobile','captação no celular','var(--p)'],
+ ['Real time','conteúdo publicado na hora','var(--p)'],
+ ['Cobertura de eventos','captação e entrega no mesmo dia','var(--g)']];
 document.getElementById('desk').innerHTML=SKILLS.map(([t,d,c])=>
  `<div class="skill" tabindex="0"><svg viewBox="0 0 120 92" style="color:${c}"><use href="#folder"/></svg><b>${esc(t)}</b><small>${esc(d)}</small></div>`).join('');
 
-const TAGS=['tudo por um clique','social media','copywriting','estratégia digital','campanhas','edição','filmmaker mobile'];
+const TAGS=['tudo por um clique','social media','copywriting','estratégia digital','campanhas','real time','cobertura de eventos','edição de vídeos','filmmaker mobile'];
 const m=TAGS.map(t=>`<span>${esc(t)}</span><span>✱</span>`).join('');
 document.getElementById('marq').innerHTML=m+m;
 
@@ -506,8 +511,8 @@ const ERAS=[
  ['O começo',[['Volkswagen'],['Mandala Spa']]],
  ['Na agência',[['Amarelô'],['Dilady'],['Cultura Inglesa'],['Azilados'],['Love Secret'],['Linhas e Cores']]],
  ['Moda',[['Angelique'],['My Coat','vestuário para médicos']]],
- ['Na TriWeb',[['Vale da Serra','hospedagem em Maranguape'],['Pediatra Sem Jaleco','Dra. Priscila Brasil'],['Dr. Eric','oftalmologista'],['Dr. Rodrigo','ortopedista'],['Lapidart','clínica de estética'],['CPDEM','endocrinologia'],['Autoescola Santos'],['TriWeb','perfil da agência'],['Dr. André','ortopedista']]],
- ['Hoje',[['Dr. Érico Diógenes','urologista, cirurgia robótica'],['Dr. Neto','cirurgião torácico, cirurgia robótica'],['IACR','8 especialistas em cirurgia robótica'],['Faculdade INBEC'],['NECI','instituto de endometriose'],['Dr. Sidney','ginecologista'],['Fortal Consórcios','desde o início']]]];
+ ['Na TriWeb',[['Vale da Serra','hospedagem em Maranguape'],['Pediatra Sem Jaleco','pediatria'],['Dra. Priscila Brasil','oftalmologista'],['Dr. Erick','oftalmologista'],['Dr. Rodrigo','ortopedista'],['Lapidart','clínica de estética'],['CPDDEM','endocrinologia'],['Autoescola Santos'],['TriWeb','perfil da agência'],['Dr. André','ortopedista']]],
+ ['Hoje',[['Dr. Érico Diógenes','urologista, cirurgia robótica'],['Dr. Neto','cirurgião torácico, cirurgia robótica'],['IACR','8 especialistas em cirurgia robótica'],['Faculdade INBEC'],['Projeto Shark','projeto social da Faculdade INBEC'],['NECI','instituto de endometriose'],['Dr. Sidney','ginecologista'],['Fortal Consórcios','desde o início']]]];
 const ALL=ERAS.flatMap(e=>e[1]);
 document.getElementById('n').textContent=ALL.length;
 const TOP=['Volkswagen','Cultura Inglesa','Love Secret','Mandala Spa','Amarelô','IACR','Fortal Consórcios','Faculdade INBEC','Vale da Serra','Dilady'];
