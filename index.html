@@ -34,6 +34,7 @@ h2.big{font-size:clamp(52px,9vw,128px)}
 nav{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;justify-content:space-between;padding:18px max(5vw,18px);background:var(--g);color:var(--c)}
 nav .logo{font:28px "Caveat Brush",cursive;text-decoration:none}
 nav .logo b{color:var(--pt);font-weight:400}
+nav .navbtn{display:none;min-height:40px;padding:0 16px;border-radius:999px;border:2px solid var(--c);background:transparent;color:var(--c);font:600 15px "DM Sans",sans-serif;cursor:pointer}
 nav ul{display:flex;flex-wrap:wrap;gap:6px 22px;list-style:none;margin:0;padding:0}
 nav ul a{text-decoration:none;font-weight:500}nav ul a:hover{color:var(--pt)}
 /* hero */
@@ -187,10 +188,36 @@ footer{background:var(--k);color:var(--c);padding:22px max(5vw,18px);display:fle
  .pols{grid-template-columns:minmax(0,1fr);max-width:340px;margin-inline:auto}
 }
 @media(max-width:600px){
+ nav{position:relative;flex-wrap:nowrap}
+ nav .navbtn{display:inline-flex;align-items:center}
+ nav ul{display:none;position:absolute;top:100%;left:0;right:0;z-index:70;background:var(--g);flex-direction:column;gap:0;padding:6px max(5vw,18px) 18px;border-bottom:3px solid var(--p)}
+ nav.open ul{display:flex}
+ nav ul a{display:block;padding:12px 0;font-size:20px;border-bottom:1px solid rgba(255,255,255,.12)}
+ .hero{padding-top:28px}
+ .name{font-size:clamp(130px,40vw,190px)}
+ .name .create{left:34%;font-size:clamp(56px,16vw,80px)}
+ .slogan{font-size:clamp(36px,10vw,46px);margin-top:44px}
+ .chip{font-size:14px;padding:5px 12px}
+ .stage{min-height:0;aspect-ratio:800/958;width:100%;max-width:400px;margin:0 auto}
+ .hero-ph{height:auto;width:100%;bottom:-48px;transform:translateX(-50%)}
+ .stage .label{top:1%;right:0;font-size:14px;padding:3px 10px}
+ .eu{left:0;top:12%;font-size:22px}
+ .eu svg{width:40px;height:40px;margin-left:50%}
+ .s1{width:30px;top:2%;left:auto;right:30%}
+ .s2{display:none}
+ .s3{width:28px;bottom:44%;right:0}
+ .ostar{width:54px;right:-2%;top:38%}
+ .stage .menu{left:-2%;bottom:8%;font-size:12px;min-width:92px}
+ .stage .menu div{padding:3px 10px}
+ .cursor{width:20px;right:-12px;bottom:-10px}
  .eu{left:2%;top:18%}
  .name .create{left:30%}
  .desk{grid-template-columns:repeat(2,minmax(0,1fr))}
- .grid{grid-template-columns:minmax(0,1fr);max-width:340px;margin:0 auto}
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 12px}
+ .grid .phone{padding:7px;border-radius:22px;box-shadow:4px 4px 0 var(--g2)}
+ .grid .phone img{border-radius:16px}
+ .role{font-size:13px;line-height:1.3}
+ .tabs{gap:8px}.tab{min-height:40px;padding:0 14px;font-size:15px}
  .menu{font-size:13px;min-width:100px}
 }
 @media(prefers-reduced-motion:reduce){.marq .row,.burst{animation:none}*{transition:none!important}html{scroll-behavior:auto}}
@@ -212,7 +239,8 @@ footer{background:var(--k);color:var(--c);padding:22px max(5vw,18px);display:fle
 
 <nav>
  <a class="logo" href="#topo">ana <b>create</b></a>
- <ul>
+ <button class="navbtn" type="button" aria-expanded="false" aria-controls="navlist">menu</button>
+ <ul id="navlist">
   <li><a href="#sobre">sobre</a></li>
   <li><a href="#trabalhos">conteúdo</a></li>
   <li><a href="#campanhas">campanhas</a></li>
@@ -436,6 +464,9 @@ dlg.addEventListener('close',()=>{pf.innerHTML=''});
 document.addEventListener('keydown',e=>{if(!dlg.open)return;if(e.key==='ArrowLeft')pprev.click();if(e.key==='ArrowRight')pnext.click()});
 render();
 
+const nv=document.querySelector('nav'),nb=nv.querySelector('.navbtn');
+nb.addEventListener('click',()=>{const o=nv.classList.toggle('open');nb.setAttribute('aria-expanded',o);nb.textContent=o?'fechar':'menu'});
+nv.querySelectorAll('ul a').forEach(a=>a.addEventListener('click',()=>{nv.classList.remove('open');nb.setAttribute('aria-expanded','false');nb.textContent='menu'}));
 document.getElementById('shots').innerHTML=[15,14,16,1,2,4,5,6,7,8,9,10,11,12,13].map(n=>`<img src="img/shot_${String(n).padStart(2,'0')}.jpg" alt="Foto tirada pela Ana" loading="lazy" width="448" height="598">`).join('');
 const sh=document.getElementById('shots');
 document.getElementById('sprev').addEventListener('click',()=>sh.scrollBy({left:-sh.clientWidth*0.8,behavior:'smooth'}));
