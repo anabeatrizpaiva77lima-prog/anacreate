@@ -7,13 +7,26 @@ const PlayerCtx = createContext<Open>(() => {});
 export const usePlayer = () => useContext(PlayerCtx);
 
 const navBtn =
-  "min-h-11 cursor-pointer rounded-full border-2 border-cream bg-transparent px-4 font-sans text-[15px] leading-[normal] font-semibold text-cream disabled:cursor-default disabled:opacity-35";
+  "min-h-11 shrink-0 cursor-pointer rounded-full border-2 border-cream bg-transparent px-4 max-sm:size-11 max-sm:px-0 max-sm:text-xl font-sans text-[15px] leading-[normal] font-semibold text-cream disabled:cursor-default disabled:opacity-35";
 
 const fmt = (s: number) => {
   if (!Number.isFinite(s)) return "0:00";
   const m = Math.floor(s / 60);
   return `${m}:${String(Math.floor(s % 60)).padStart(2, "0")}`;
 };
+
+/** Trava a rolagem da página atrás do modal, sem a página "pular" quando a barra de rolagem some. */
+function lockScroll(on: boolean) {
+  const html = document.documentElement;
+  if (on) {
+    const gap = window.innerWidth - html.clientWidth;
+    html.style.overflow = "hidden";
+    if (gap > 0) document.body.style.paddingRight = `${gap}px`;
+  } else {
+    html.style.overflow = "";
+    document.body.style.paddingRight = "";
+  }
+}
 
 /** Modal com o player próprio do site; navega entre os itens da lista que o abriu. */
 export function PlayerProvider({ children }: { children: React.ReactNode }) {
@@ -24,6 +37,7 @@ export function PlayerProvider({ children }: { children: React.ReactNode }) {
     setState({ list, i });
     const d = dlg.current;
     if (d && !d.open) {
+      lockScroll(true);
       try {
         d.showModal();
       } catch {
@@ -59,7 +73,10 @@ export function PlayerProvider({ children }: { children: React.ReactNode }) {
         ref={dlg}
         aria-label="Vídeo"
         onClick={(e) => e.target === dlg.current && close()}
-        onClose={() => setState(null)}
+        onClose={() => {
+          setState(null);
+          lockScroll(false);
+        }}
       >
         <button className="x" type="button" aria-label="Fechar" onClick={close}>
           ×
@@ -81,18 +98,19 @@ export function PlayerProvider({ children }: { children: React.ReactNode }) {
                 <img key={w.code} src={cover(w)} alt={`${GROUP_LABEL[w.group]}: ${w.role}`} />
               )}
             </div>
-            <p className="m-0 text-center font-medium text-cream">
+            <p className="m-0 line-clamp-2 text-center font-medium text-cream max-sm:text-[15px]">
               {GROUP_LABEL[w.group]} · {w.role}
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-2.5">
-              <button type="button" className={navBtn} disabled={state.i <= 0} onClick={() => step(-1)}>
-                ‹ anterior
+            {/* No celular, anterior/próximo viram botões redondos só com a seta, para tudo caber numa linha. */}
+            <div className="pnav flex flex-nowrap items-center justify-center gap-2.5 max-sm:gap-2">
+              <button type="button" className={navBtn} disabled={state.i <= 0} onClick={() => step(-1)} aria-label="Anterior">
+                ‹<span className="max-sm:sr-only"> anterior</span>
               </button>
               <a className="btn" href={igUrl(w)} target="_blank" rel="noopener">
                 abrir no Instagram ↗
               </a>
-              <button type="button" className={navBtn} disabled={!hasNext} onClick={() => step(1)}>
-                próximo ›
+              <button type="button" className={navBtn} disabled={!hasNext} onClick={() => step(1)} aria-label="Próximo">
+                <span className="max-sm:sr-only">próximo </span>›
               </button>
             </div>
           </div>

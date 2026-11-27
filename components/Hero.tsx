@@ -10,7 +10,10 @@ export function Hero() {
             Ana<span className="create">create</span>
           </h1>
           <p className="slogan hand">Tudo por um clique.</p>
-          <p className="tag">Formada em design, criativa desde que peguei o primeiro lápis de cor.</p>
+          <p className="tag">
+            Formada em Design e pós-graduanda em Gestão Estratégica de Marketing e Gestão da Reputação e Imagem.
+            <br />& criativa desde que peguei o primeiro lápis de cor.
+          </p>
           <div className="flex flex-wrap gap-2.5">
             {CHIPS.map((c) => (
               <span key={c} className="rounded-full border-2 border-cream px-3.5 py-1.5 text-[15px] font-medium mobile:px-3 mobile:py-[5px] mobile:text-[14px]">
