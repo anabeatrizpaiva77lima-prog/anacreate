@@ -11,10 +11,12 @@ import { Marcas } from "@/components/Marcas";
 import { Fora } from "@/components/Fora";
 import { Contato } from "@/components/Contato";
 import { Footer } from "@/components/Footer";
+import { jsonLd } from "@/lib/seo";
 
 export default function Home() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
       <Sprite />
       <Nav />
       <Hero />
