@@ -1,6 +1,6 @@
 "use client";
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
-import { CAMPAIGN_INFO, cover, GROUP_LABEL, igUrl, mediaType, videoSrc, type Work } from "@/lib/data";
+import { cover, GROUP_LABEL, igUrl, mediaType, videoSrc, type Work } from "@/lib/data";
 
 type Open = (list: Work[], index: number) => void;
 const PlayerCtx = createContext<Open>(() => {});
@@ -50,8 +50,6 @@ export function PlayerProvider({ children }: { children: React.ReactNode }) {
 
   const w = state?.list[state.i];
   const hasNext = !!state && state.i < state.list.length - 1;
-  const [client, title] = (w && CAMPAIGN_INFO[w.code]) || ["", ""];
-  const caption = w ? [client, title].filter(Boolean).join(" · ") || GROUP_LABEL[w.group] : "";
 
   return (
     <PlayerCtx.Provider value={open}>
@@ -84,14 +82,14 @@ export function PlayerProvider({ children }: { children: React.ReactNode }) {
               )}
             </div>
             <p className="m-0 text-center font-medium text-cream">
-              {caption} · {w.role}
+              {GROUP_LABEL[w.group]} · {w.role}
             </p>
             <div className="flex flex-wrap items-center justify-center gap-2.5">
               <button type="button" className={navBtn} disabled={state.i <= 0} onClick={() => step(-1)}>
                 ‹ anterior
               </button>
               <a className="btn" href={igUrl(w)} target="_blank" rel="noopener">
-                ver no Instagram ↗
+                abrir no Instagram ↗
               </a>
               <button type="button" className={navBtn} disabled={!hasNext} onClick={() => step(1)}>
                 próximo ›
