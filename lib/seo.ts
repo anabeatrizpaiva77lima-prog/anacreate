@@ -44,11 +44,16 @@ export const jsonLd = {
       image: `${SITE.url}/img/hero_bw.webp`,
       jobTitle: "Líder de estratégia digital",
       description:
-        "Social media e copywriter há 4 anos, hoje líder de estratégia digital. Formada em design. Cria campanhas, escreve, edita e filma com o celular.",
+        "Social media e copywriter há 4 anos, hoje líder de estratégia digital. Bacharel em Design e pós-graduanda em Gestão Estratégica de Marketing e Gestão da Reputação e Imagem. Cria campanhas, escreve, edita e filma com o celular.",
       email: `mailto:${CONTACT.email}`,
       telephone: "+55-85-99220-1634",
       address: { "@type": "PostalAddress", addressLocality: "Fortaleza", addressRegion: "CE", addressCountry: "BR" },
-      knowsAbout: SKILLS.map(([title]) => title).concat(["Marketing digital", "Marketing para saúde", "Design"]),
+      knowsAbout: SKILLS.map(([title]) => title).concat(["Marketing digital", "Marketing para saúde", "Design", "Gestão estratégica de marketing", "Gestão da reputação e imagem"]),
+      hasCredential: {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "degree",
+        name: "Bacharelado em Design",
+      },
       knowsLanguage: "pt-BR",
       sameAs: [CONTACT.instagram],
       worksFor: { "@id": id("servico") },

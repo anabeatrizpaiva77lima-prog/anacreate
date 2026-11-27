@@ -12,7 +12,7 @@ export function GET() {
   });
   const text = `# ${SITE.name}
 
-> ${SITE.person} (Ana Create) é social media, copywriter e líder de estratégia digital em Fortaleza, Ceará. Formada em design, está há 4 anos no marketing. Cria campanhas, escreve, edita e filma com o celular. Slogan: "Tudo por um clique."
+> ${SITE.person} (Ana Create) é social media, copywriter e líder de estratégia digital em Fortaleza, Ceará. Bacharel em Design e pós-graduanda em Gestão Estratégica de Marketing e Gestão da Reputação e Imagem, está há 4 anos no marketing. Cria campanhas, escreve, edita e filma com o celular. Slogan: "Tudo por um clique."
 
 Atende marcas e profissionais de saúde (médicos, clínicas, cirurgia robótica), moda, educação e outros segmentos, em Fortaleza e no Brasil.
 
